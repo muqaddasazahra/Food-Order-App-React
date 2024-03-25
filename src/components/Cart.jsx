@@ -15,8 +15,12 @@ export default function Cart() {
   function handleCloseCart() {
     userProgressContext.hideCart();
   }
+  function handleCheckout()
+  {
+    userProgressContext.showCheckout();
+  }
   return (
-    <Modal className="cart" open={userProgressContext.progress === "cart"}>
+    <Modal className="cart" open={userProgressContext.progress === "cart"} onClose={userProgressContext.progress==="cart" ? handleCloseCart: null}>
       <h2>Your Cart</h2>
       <ul>
         {cartcontext.items.map((item) => (
@@ -35,7 +39,7 @@ export default function Cart() {
         <Button textonly onClick={handleCloseCart}>
           Close
         </Button>
-        <Button onClick={handleCloseCart}>Go to Checkout</Button>
+        {cartcontext.items.length > 0 && (<Button onClick={handleCheckout}>Go to Checkout</Button> )}
       </p>
     </Modal>
   );
