@@ -1,4 +1,4 @@
-import { currencyformatter } from "../util/currensyFormatter"
+import { currencyformatter } from "../util/currencyFormatter"
 import Button from "./UI/Button"
 import CartContext from "../store/CartContext"
 import { useContext } from "react"
