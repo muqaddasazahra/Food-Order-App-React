@@ -1,6 +1,5 @@
 
 import { useContext } from 'react';
-
 import Modal from './UI/Modal.jsx';
 import CartContext from '../store/CartContext.jsx';
 import { currencyformatter } from '../util/currencyFormatter.js';
